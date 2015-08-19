@@ -153,6 +153,8 @@ public class BikeCamera : MonoBehaviour
 //			else
 //			{
 				//bikeRot = Mathf.LerpAngle(bikeRot, BikeManager.instance.bikesContols[data.currentBike].transform.eulerAngles.x, Time.deltaTime*2f/dlt);
+
+			//DESert 2
 			if(!onGround)
 			{
 				onGroundTime += Time.deltaTime;
@@ -164,9 +166,10 @@ public class BikeCamera : MonoBehaviour
 				onGroundTime = 0f;
 				bikeRot = Mathf.MoveTowardsAngle(bikeRot,BikeManager.instance.bikesContols[data.currentBike].transform.eulerAngles.x, Time.deltaTime * 25f);
 			}
+			//bikeRot = Mathf.LerpAngle(bikeRot, BikeManager.instance.bikesContols[data.currentBike].transform.eulerAngles.x, Time.deltaTime*2f);
 			float val = bikeRot;
 
-			transform.eulerAngles = new Vector3(Angle+bikeAngle+valueForAngle+val/*bikeRot*/, yAngle, 0);
+			transform.eulerAngles = new Vector3(Angle+bikeAngle+valueForAngle+val, yAngle, 0);
 			var direction = Vector3.zero;
 			if(!isForShop)
             	direction = transform.rotation * -Vector3.forward;
