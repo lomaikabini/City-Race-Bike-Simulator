@@ -8,6 +8,9 @@ public class BikeManager : MonoBehaviour {
 	public BikeCamera cam;
 	public Transform[] positionsWrapers;
 	public GameObject arrowUI;
+
+	public UILabel test;
+
 	public UILabel speedUI;
 	public UILabel gearstUI;
 	public UIWidget nitroUI;
@@ -24,6 +27,11 @@ public class BikeManager : MonoBehaviour {
 	float extraValue = 25f;
 	bool isExtra = false;
 
+
+	void Update()
+	{
+		test.text = bikesContols [data.currentBike].transform.position.ToString ();
+	}
 
 	void Awake()
 	{
